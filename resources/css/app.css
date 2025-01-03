@@ -2,6 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
-.hidden-scrollbar{
+.hidden-scrollbar {
     scrollbar-width: none;
+}
+
+.details-active::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom-style: solid;
+    border-bottom-color: #ff5f01;
+    border-bottom-width: 15px;
+    position: absolute;
+    top: "100%";
+    animation-name: arrowAnimation;
+    animation-duration: 300ms;
+}
+
+@keyframes arrowAnimation {
+    from {
+        border-bottom-width: 0px;
+    }
+
+    to {
+        border-bottom-width: 15px;
+    }
 }

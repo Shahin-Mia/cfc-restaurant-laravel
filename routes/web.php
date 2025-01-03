@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Home\HomeController;
+use App\Http\Controllers\Location\LocationController;
 use App\Http\Controllers\Meal\MealController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
@@ -15,8 +16,9 @@ use Inertia\Inertia;
 //         'phpVersion' => PHP_VERSION,
 //     ]);
 // });
-Route::get('/',     [HomeController::class, "index"]);
-Route::get('/meal', [MealController::class, "index"]);
+Route::get('/',         [HomeController::class, "index"]);
+Route::get('/meal',     [MealController::class, "index"]);
+Route::get('/location', [LocationController::class, "index"]);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

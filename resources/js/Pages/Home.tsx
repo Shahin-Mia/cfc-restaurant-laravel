@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faImage } from "@fortawesome/free-solid-svg-icons";
+import { faImage, faPlusCircle } from "@fortawesome/free-solid-svg-icons";
 import MainLayout from "@/Layouts/MainLayout";
-import { Head } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 
 const Home = () => {
     const [sliderY, setSliderY] = useState(0);
@@ -90,7 +90,7 @@ const Home = () => {
     return (
         <MainLayout>
             <Head title="Home" />
-            <div style={{ height: "90vh", overflow: "hidden", position: "relative" }}>
+            <div style={{ height: "90vh", overflow: "hidden", position: "relative" }} className="hidden lg:block">
                 {/* Scrollable Content */}
                 <div
                     style={{
@@ -105,26 +105,16 @@ const Home = () => {
                             <img src="/images/brost_6.jpg" alt="promotional_pic" className="w-full h-full" />
                         </div>
                         <div className='lg:h-[90vh] overflow-x-hidden hidden-scrollbar scrollable-content' ref={scrollableDiv}>
-                            <div className="bg-slate-600 h-72 xl:h-96 flex items-center justify-center">
-                                {/* placeholder */}
-                                <FontAwesomeIcon icon={faImage} className='text-7xl' />
+                            <div className="bg-slate-600 h-72 flex items-center justify-center">
+                                <img src="/images/side-pic-1.webp" alt="" />
                             </div>
-                            <div className="bg-slate-400 h-72 xl:h-96 flex items-center justify-center">
-                                {/* placeholder */}
-                                <FontAwesomeIcon icon={faImage} className='text-7xl' />
+                            <div className="bg-slate-600 h-72 flex items-center justify-center">
+                                <img src="/images/side-pic-2.webp" alt="" />
                             </div>
-                            <div className="bg-slate-600 h-72 xl:h-96 flex items-center justify-center">
-                                {/* placeholder */}
-                                <FontAwesomeIcon icon={faImage} className='text-7xl' />
+                            <div className="bg-slate-600 h-72 flex items-center justify-center">
+                                <img src="/images/side-pic-3.webp" alt="" />
                             </div>
-                            <div className="bg-slate-400 h-72 xl:h-96 flex items-center justify-center">
-                                {/* placeholder */}
-                                <FontAwesomeIcon icon={faImage} className='text-7xl' />
-                            </div>
-                            <div className="bg-slate-600 h-72 xl:h-96 flex items-center justify-center">
-                                {/* placeholder */}
-                                <FontAwesomeIcon icon={faImage} className='text-7xl' />
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -140,16 +130,56 @@ const Home = () => {
                     style={{
                         height: "100vh",
                         width: "100%",
-                        backgroundColor: "#3498db",
                         position: "absolute",
+                        backgroundColor: "#fff",
                         top: 0,
                         zIndex: 10,
+                        backgroundImage: "url(/images/top-banner.webp)",
+                        backgroundPosition: "center",
+                        backgroundSize: "100vw 100vh",
+                        backgroundRepeat: "no-repeat"
                     }}
                 >
-                    <h1 style={{ padding: "20px", textAlign: "center", color: "#fff" }}>
-                        Sliding Div
-                    </h1>
+                    <div className="h-full flex justify-end items-center">
+                        <div className="flex flex-col w-1/3">
+                            <h1 className="text-5xl italic font-serif text-white font-extrabold">Crunch It, Love It – Where Every Bite is Crispy Delight!</h1>
+                            <Link href="/meal"><div className="my-7 cursor-pointer bg-primary-cfc px-7 py-4 w-48 flex justify-center items-center text-white rounded-full font-bold hover:scale-105 transition-transform duration-300 ease-in-out hover:text-[#ff5f01] hover:bg-transparent hover:border-2 border-[#ff5f01]">
+                                <FontAwesomeIcon icon={faPlusCircle} className="text-lg" />
+                                <span className="ml-1">find out more</span>
+                            </div>
+                            </Link>
+                        </div>
+                    </div>
+                    <img src="/images/scroll-down.gif" className="absolute bottom-10 mx-auto left-0 right-0 w-32" alt="" />
                 </motion.div>
+            </div>
+            <div>
+                <div className="grid grid-cols-1 lg:hidden">
+                    <div className="bg-slate-600 h-screen flex items-center justify-center relative">
+                        <img src="/images/top-banner.webp" className="w-full h-screen object-cover object-center" alt="" />
+                        <div className="flex flex-col absolute right-0 top-1/2 text-end items-end">
+                            <h1 className="text-2xl md:text-3xl md:w-1/2 italic font-serif text-white font-extrabold">Crunch It, Love It – Where Every Bite is Crispy Delight!</h1>
+                            <Link href="/meal"><div className="my-7 cursor-pointer bg-primary-cfc px-4 py-3 w-44 flex justify-center items-center text-white rounded-full font-bold hover:scale-105 transition-transform duration-300 ease-in-out hover:text-[#ff5f01] hover:bg-transparent hover:border-2 border-[#ff5f01]">
+                                <FontAwesomeIcon icon={faPlusCircle} className="text-lg" />
+                                <span className="ml-1">find out more</span>
+                            </div>
+                            </Link>
+                        </div>
+                        <img src="/images/scroll-down.gif" className="absolute bottom-4 mx-auto left-0 right-0 w-24" alt="" />
+                    </div>
+                    <div className="bg-slate-600 h-full flex items-center justify-center">
+                        <img src="/images/brost_6.jpg" alt="promotional_pic" className="w-full h-full" />
+                    </div>
+                    <div className="bg-slate-600 h-full flex items-center justify-center">
+                        <img src="/images/side-pic-1.webp" alt="" />
+                    </div>
+                    <div className="bg-slate-600 h-full flex items-center justify-center">
+                        <img src="/images/side-pic-2.webp" alt="" />
+                    </div>
+                    <div className="bg-slate-600 h-full flex items-center justify-center">
+                        <img src="/images/side-pic-3.webp" alt="" />
+                    </div>
+                </div>
             </div>
         </MainLayout>
     );
